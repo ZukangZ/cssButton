@@ -1,0 +1,31 @@
+/*
+generic button
+Doesn't work for darker buttons(rgb less than 50)
+designed for button with innerhtml with 4-10char.
+Any span class that starts with button will "inherit" this class
+*/
+span[class*="button-"] {
+	display: inline-block;
+	padding: 0.6em 1em;
+	background-color: rgb(
+		var(--r), var(--g), var(--b)
+	);
+	border-radius: 10%;
+  user-select: none;
+}
+
+span[class*="button-"]:hover {
+	background-color: rgb(
+		calc(var(--r) - 25),
+		calc(var(--g) - 25),
+		calc(var(--b) - 25)
+	);
+}
+
+span[class*="button-"]:active {
+	background-color: rgb(
+		calc(var(--r) - 50),
+		calc(var(--g) - 50),
+		calc(var(--b) - 50)
+	);
+}
